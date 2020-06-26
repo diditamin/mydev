@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 70px;
+  background-color: rgb(163, 206, 255);
+}
+
+.brand-logo {
+  text-transform: capitalize;
+  font-family: 'Odibee Sans', cursive;
+  color: whitesmoke;
+  letter-spacing: 2px;
+  font-size: 25px;
+
+}
+
+.nav-links {
+  display: flex;
+
+}
+
+.nav-link {
+  list-style: none;
+
+}
+
+.nav-links a {
+  text-decoration: none;
+  margin-left: 20px;
+  text-transform: uppercase;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: whitesmoke;
+  font-weight: 600;
+}
+
+.nav-links a:hover {
+  color: white;
+}
+
+/* hamburger */
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  width: 50px;
+  justify-content: space-between;
+  position: relative;
+  align-items: center;
+}
+
+.menu-toggle input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: whitesmoke;
+  border-radius: 1px;
+  transition: all 0.3s ease-in
+}
+
+.menu-toggle span:nth-child(2) {
+  transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+  transform-origin: 0 100%;
+}
+
+
+
+.menu-toggle input:checked~span:nth-child(2) {
+  background-color: white;
+  transform: rotate(45deg) translate(-2px, -1px);
+
+}
+
+.menu-toggle input:checked~span:nth-child(3) {
+  transform: scale(0);
+}
+
+.menu-toggle input:checked~span:nth-child(4) {
+  background-color: white;
+  transform: rotate(-45deg) translate(-2px, 0);
+
+}
+
+
+
+@media screen and (max-width: 768px) {
+  ul.nav-links {
+    position: absolute;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 50vh;
+    margin-top: 29%;
+    background-color: rgb(163, 206, 255);
+    align-items: center;
+    z-index: -1;
+    transform: translateY(-100%);
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+  }
+
+  ul.slide {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .menu-toggle {
+    display: flex;
+
+  }
+}
